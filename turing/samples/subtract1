@@ -1,0 +1,8 @@
+#in state 1 saw 1, change it for 1, move right set current state to 1
+1 1 1 1 1
+# in state 1 saw 0 change it for 0, move left, set current state to 2
+1 0 0 -1 2
+# in state 2 saw 1 change it for 0, dont move head, set current state to end state
+2 1 0 0 0
+# in state 2 saw 0 change it for 0, dont move head, set current state to end state
+2 0 0 0 0
