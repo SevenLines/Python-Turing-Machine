@@ -1,6 +1,6 @@
-from PyQt4.QtCore import QModelIndex
-from PyQt4.QtCore import Qt
-from PyQt4.QtGui import QTableView, QAbstractItemView
+from PySide.QtCore import QModelIndex
+from PySide.QtCore import Qt
+from PySide.QtGui import QTableView, QAbstractItemView
 
 
 class TableViewTuring(QTableView):

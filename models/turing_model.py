@@ -1,5 +1,5 @@
-from PyQt4.QtCore import QAbstractItemModel, QAbstractTableModel, QVariant, QModelIndex
-from PyQt4.QtCore import Qt
+from PySide.QtCore import QAbstractItemModel, QAbstractTableModel, QModelIndex
+from PySide.QtCore import Qt
 
 from turing.turing import Turing, Rule
 
@@ -14,11 +14,11 @@ class Turing_Model(QAbstractTableModel):
         self.states = self.turing.states
         self.alphabet = self.turing.alphabet
         self.endResetModel()
-        QAbstractItemModel.reset(self)
+        QAbstractTableModel.reset(self)
 
 
     def __init__(self, QObject_parent=None, turing=None):
-        QAbstractItemModel.__init__(self, QObject_parent)
+        QAbstractTableModel.__init__(self, QObject_parent)
         self.set_machine(turing)
 
     def set_machine(self, turing):
@@ -38,7 +38,7 @@ class Turing_Model(QAbstractTableModel):
         assert (isinstance(index, QModelIndex))
 
         if not index.isValid():
-            return QVariant()
+            return None
 
         if int_role == Qt.DisplayRole:
             col = index.column()
@@ -53,8 +53,7 @@ class Turing_Model(QAbstractTableModel):
             row = index.row() +1
             out = self.turing.rule(self.states[row], self.alphabet[col])
             return out
-
-        return QVariant()
+        return None
 
     def flags(self, QModelIndex):
         return  Qt.ItemIsEditable | Qt.ItemIsEnabled

@@ -1,8 +1,8 @@
 from PyQt4 import QtCore
 
-from PyQt4.QtCore import QSettings, QVariant, QString
-from PyQt4.QtGui import QMainWindow
-from PyQt4.QtGui import QFileDialog
+from PySide.QtCore import QSettings
+from PySide.QtGui import QMainWindow
+from PySide.QtGui import QFileDialog
 from forms.delegates.CellDelegate import Cell_Delegate
 from forms.delegates.header_delegate import Header_Delegate
 
@@ -29,8 +29,7 @@ class MainForm(QMainWindow, Ui_MainForm):
 
     def load_machine(self):
         path = QFileDialog.getOpenFileName(self, 'Open file', self.last_path)
-        assert (isinstance(path, QString))
-        if path.isNull():
+        if not path:
             return
         self.last_path = path
         self.turing_model.set_machine(turing=Turing(path=path))
@@ -48,8 +47,8 @@ class MainForm(QMainWindow, Ui_MainForm):
         settings = QSettings('config.ini', QSettings.IniFormat)
 
         settings.beginGroup(self.__class__.__name__)
-        self.restoreGeometry(settings.value('Geometry', QVariant.ByteArray).toByteArray())
-        self.splitter.restoreState(settings.value('splitter', QVariant.ByteArray).toByteArray())
+        self.restoreGeometry(settings.value('Geometry'))
+        self.splitter.restoreState(settings.value('splitter'))
         settings.endGroup()
 
 

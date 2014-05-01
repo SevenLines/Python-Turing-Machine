@@ -2,74 +2,60 @@
 
 # Form implementation generated from reading ui file 'forms/ui/FormMain.ui'
 #
-# Created: Fri May  2 00:32:24 2014
-#      by: PyQt4 UI code generator 4.10.3
+# Created: Fri May  2 03:44:00 2014
+#      by: pyside-uic 0.2.14 running on PySide 1.1.2
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
-
-try:
-    _fromUtf8 = QtCore.QString.fromUtf8
-except AttributeError:
-    def _fromUtf8(s):
-        return s
-
-try:
-    _encoding = QtGui.QApplication.UnicodeUTF8
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig, _encoding)
-except AttributeError:
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig)
+from PySide import QtCore, QtGui
 
 class Ui_MainForm(object):
     def setupUi(self, MainForm):
-        MainForm.setObjectName(_fromUtf8("MainForm"))
+        MainForm.setObjectName("MainForm")
         MainForm.resize(485, 429)
         self.centralwidget = QtGui.QWidget(MainForm)
-        self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
+        self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtGui.QGridLayout(self.centralwidget)
-        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.gridLayout.setObjectName("gridLayout")
         self.horizontalLayout = QtGui.QHBoxLayout()
-        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
+        self.horizontalLayout.setObjectName("horizontalLayout")
         self.btnStep = QtGui.QPushButton(self.centralwidget)
-        self.btnStep.setObjectName(_fromUtf8("btnStep"))
+        self.btnStep.setObjectName("btnStep")
         self.horizontalLayout.addWidget(self.btnStep)
         self.btnStart = QtGui.QPushButton(self.centralwidget)
-        self.btnStart.setObjectName(_fromUtf8("btnStart"))
+        self.btnStart.setObjectName("btnStart")
         self.horizontalLayout.addWidget(self.btnStart)
         self.btnRestart = QtGui.QPushButton(self.centralwidget)
-        self.btnRestart.setObjectName(_fromUtf8("btnRestart"))
+        self.btnRestart.setObjectName("btnRestart")
         self.horizontalLayout.addWidget(self.btnRestart)
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.gridLayout.addLayout(self.horizontalLayout, 0, 0, 1, 1)
         self.splitter = QtGui.QSplitter(self.centralwidget)
         self.splitter.setOrientation(QtCore.Qt.Vertical)
-        self.splitter.setObjectName(_fromUtf8("splitter"))
+        self.splitter.setObjectName("splitter")
         self.clmnTape = QtGui.QColumnView(self.splitter)
-        self.clmnTape.setObjectName(_fromUtf8("clmnTape"))
+        self.clmnTape.setObjectName("clmnTape")
         self.tblTuring = TableViewTuring(self.splitter)
         self.tblTuring.setEditTriggers(QtGui.QAbstractItemView.AnyKeyPressed|QtGui.QAbstractItemView.DoubleClicked|QtGui.QAbstractItemView.EditKeyPressed|QtGui.QAbstractItemView.SelectedClicked)
-        self.tblTuring.setObjectName(_fromUtf8("tblTuring"))
+        self.tblTuring.setObjectName("tblTuring")
         self.gridLayout.addWidget(self.splitter, 1, 0, 1, 1)
         MainForm.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainForm)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 485, 25))
-        self.menubar.setObjectName(_fromUtf8("menubar"))
+        self.menubar.setObjectName("menubar")
         self.menuFile = QtGui.QMenu(self.menubar)
-        self.menuFile.setObjectName(_fromUtf8("menuFile"))
+        self.menuFile.setObjectName("menuFile")
         MainForm.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(MainForm)
-        self.statusbar.setObjectName(_fromUtf8("statusbar"))
+        self.statusbar.setObjectName("statusbar")
         MainForm.setStatusBar(self.statusbar)
         self.actionLoad = QtGui.QAction(MainForm)
-        self.actionLoad.setObjectName(_fromUtf8("actionLoad"))
+        self.actionLoad.setObjectName("actionLoad")
         self.actionSave = QtGui.QAction(MainForm)
-        self.actionSave.setObjectName(_fromUtf8("actionSave"))
+        self.actionSave.setObjectName("actionSave")
         self.actionExit = QtGui.QAction(MainForm)
-        self.actionExit.setObjectName(_fromUtf8("actionExit"))
+        self.actionExit.setObjectName("actionExit")
         self.menuFile.addAction(self.actionLoad)
         self.menuFile.addAction(self.actionSave)
         self.menuFile.addSeparator()
@@ -77,20 +63,20 @@ class Ui_MainForm(object):
         self.menubar.addAction(self.menuFile.menuAction())
 
         self.retranslateUi(MainForm)
-        QtCore.QObject.connect(self.actionExit, QtCore.SIGNAL(_fromUtf8("triggered()")), MainForm.close)
+        QtCore.QObject.connect(self.actionExit, QtCore.SIGNAL("triggered()"), MainForm.close)
         QtCore.QMetaObject.connectSlotsByName(MainForm)
 
     def retranslateUi(self, MainForm):
-        MainForm.setWindowTitle(_translate("MainForm", "MainWindow", None))
-        self.btnStep.setText(_translate("MainForm", "step", None))
-        self.btnStart.setText(_translate("MainForm", "start", None))
-        self.btnRestart.setText(_translate("MainForm", "restart", None))
-        self.menuFile.setTitle(_translate("MainForm", "File", None))
-        self.actionLoad.setText(_translate("MainForm", "Load...", None))
-        self.actionLoad.setShortcut(_translate("MainForm", "Ctrl+O", None))
-        self.actionSave.setText(_translate("MainForm", "Save...", None))
-        self.actionSave.setShortcut(_translate("MainForm", "Ctrl+S", None))
-        self.actionExit.setText(_translate("MainForm", "Exit", None))
-        self.actionExit.setShortcut(_translate("MainForm", "Ctrl+Q", None))
+        MainForm.setWindowTitle(QtGui.QApplication.translate("MainForm", "MainWindow", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnStep.setText(QtGui.QApplication.translate("MainForm", "step", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnStart.setText(QtGui.QApplication.translate("MainForm", "start", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnRestart.setText(QtGui.QApplication.translate("MainForm", "restart", None, QtGui.QApplication.UnicodeUTF8))
+        self.menuFile.setTitle(QtGui.QApplication.translate("MainForm", "File", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionLoad.setText(QtGui.QApplication.translate("MainForm", "Load...", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionLoad.setShortcut(QtGui.QApplication.translate("MainForm", "Ctrl+O", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSave.setText(QtGui.QApplication.translate("MainForm", "Save...", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSave.setShortcut(QtGui.QApplication.translate("MainForm", "Ctrl+S", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionExit.setText(QtGui.QApplication.translate("MainForm", "Exit", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionExit.setShortcut(QtGui.QApplication.translate("MainForm", "Ctrl+Q", None, QtGui.QApplication.UnicodeUTF8))
 
 from forms.TableViewTuring import TableViewTuring

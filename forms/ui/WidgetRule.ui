@@ -30,7 +30,7 @@ background-color:black;
     <number>0</number>
    </property>
    <item row="1" column="2">
-    <widget class="QLineEdit" name="edtRule">
+    <widget class="RuleTextEdit" name="edtRule">
      <property name="inputMask">
       <string/>
      </property>
@@ -38,6 +38,13 @@ background-color:black;
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>RuleTextEdit</class>
+   <extends>QLineEdit</extends>
+   <header>forms.RuleTextEdit</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
