@@ -44,7 +44,7 @@ class Rule:
         if self.is_incorrect():
             return ''
         str_shear = '0'
-        if self.shear <= 1: str_shear = 'L'
+        if self.shear <= -1: str_shear = 'L'
         if self.shear >= 1: str_shear = 'R'
         return '{0}, {2}, q{1}' \
             .format(self.new_symbol,

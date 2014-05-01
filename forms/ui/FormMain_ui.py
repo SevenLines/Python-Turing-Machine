@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'forms/ui/FormMain.ui'
 #
-# Created: Thu May  1 03:51:27 2014
+# Created: Fri May  2 00:32:24 2014
 #      by: PyQt4 UI code generator 4.10.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -50,7 +50,8 @@ class Ui_MainForm(object):
         self.splitter.setObjectName(_fromUtf8("splitter"))
         self.clmnTape = QtGui.QColumnView(self.splitter)
         self.clmnTape.setObjectName(_fromUtf8("clmnTape"))
-        self.tblTuring = QtGui.QTableView(self.splitter)
+        self.tblTuring = TableViewTuring(self.splitter)
+        self.tblTuring.setEditTriggers(QtGui.QAbstractItemView.AnyKeyPressed|QtGui.QAbstractItemView.DoubleClicked|QtGui.QAbstractItemView.EditKeyPressed|QtGui.QAbstractItemView.SelectedClicked)
         self.tblTuring.setObjectName(_fromUtf8("tblTuring"))
         self.gridLayout.addWidget(self.splitter, 1, 0, 1, 1)
         MainForm.setCentralWidget(self.centralwidget)
@@ -92,3 +93,4 @@ class Ui_MainForm(object):
         self.actionExit.setText(_translate("MainForm", "Exit", None))
         self.actionExit.setShortcut(_translate("MainForm", "Ctrl+Q", None))
 
+from forms.TableViewTuring import TableViewTuring

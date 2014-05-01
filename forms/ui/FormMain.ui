@@ -59,7 +59,11 @@
        <enum>Qt::Vertical</enum>
       </property>
       <widget class="QColumnView" name="clmnTape"/>
-      <widget class="QTableView" name="tblTuring"/>
+      <widget class="TableViewTuring" name="tblTuring">
+       <property name="editTriggers">
+        <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -110,6 +114,13 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TableViewTuring</class>
+   <extends>QTableView</extends>
+   <header>forms.TableViewTuring</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>

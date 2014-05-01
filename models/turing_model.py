@@ -9,6 +9,14 @@ class Turing_Model(QAbstractTableModel):
     states = None
     alphabet = None
 
+    def reset(self):
+        self.beginResetModel()
+        self.states = self.turing.states
+        self.alphabet = self.turing.alphabet
+        self.endResetModel()
+        QAbstractItemModel.reset(self)
+
+
     def __init__(self, QObject_parent=None, turing=None):
         QAbstractItemModel.__init__(self, QObject_parent)
         self.set_machine(turing)
@@ -44,9 +52,7 @@ class Turing_Model(QAbstractTableModel):
             col = index.column()
             row = index.row() +1
             out = self.turing.rule(self.states[row], self.alphabet[col])
-            if isinstance(out, Rule):
-                out = out.preview
-            return str(out)
+            return out
 
         return QVariant()
 
